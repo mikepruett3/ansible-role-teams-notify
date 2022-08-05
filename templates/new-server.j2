@@ -1,0 +1,24 @@
+{
+    "@context": "https://schema.org/extensions",
+    "@type": "MessageCard",
+    "summary": "Ansible Notification",
+    "sections": [
+        {
+            "text": "Requested Server has been created:",
+            "facts": [
+                {
+                    "name": "Hostname:",
+                    "value": "{{ ansible_hostname }}"
+                },
+                {
+                    "name": "Operating System:",
+                    "value": "{{ ansible_distribution }} {{ ansible_distribution_version }}"
+                },
+                {
+                    "name": "IP Address:",
+                    "value": "{{ ansible_all_ipv4_addresses[0] }}"
+                }
+            ]
+        }
+    ]
+}

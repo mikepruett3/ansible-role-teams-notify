@@ -1,2 +1,5 @@
 ---
 # defaults file for ansible-role-teams-notify
+
+webhook: 'https://outlook.office.com/webhook/your_teams_webhook'
+message_type: 'new-server'

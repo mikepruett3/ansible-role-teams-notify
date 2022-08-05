@@ -1,2 +1,10 @@
 ---
 # tasks file for ansible-role-teams-notify
+
+- name: "Microsoft Teams Webhook Message"
+  ansible.builtin.uri:
+    url: "{{ webhook }}"
+    method: POST
+    status_code: 200
+    body_format: json
+    body: "{{ lookup('ansible.builtin.template','{{ message_type }}.j2') }}"
